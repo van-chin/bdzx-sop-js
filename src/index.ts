@@ -37,9 +37,10 @@ class ZxSop {
   private PEM_BEGIN: string = "-----BEGIN PRIVATE KEY-----\n";
   private PEM_END: string = "\n-----END PRIVATE KEY-----";
 
-  public constructor(appId: string, appKey: string) {
+  public constructor(appId: string, appKey: string,baseApiUri:string) {
     this.appId = appId;
     this.appKey = appKey;
+    this.baseApiUri = baseApiUri;
   }
 
   /**

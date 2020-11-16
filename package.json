@@ -22,8 +22,11 @@
     "webpack-dev-server": "^3.11.0"
   },
   "version": "1.0.0",
-  "description": "My webpack project",
-  "name": "my-webpack-project",
+  "files": [
+    "dist"
+  ],
+  "description": "ZX SOP JS SDK",
+  "name": "bdzx-sop-js",
   "scripts": {
     "dev": "webpack serve --mode development --env development --hot",
     "build": "webpack"
