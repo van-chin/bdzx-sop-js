@@ -21,7 +21,7 @@
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"
   },
-  "version": "1.0.0",
+  "version": "1.0.4",
   "files": [
     "dist"
   ],
@@ -30,5 +30,17 @@
   "scripts": {
     "dev": "webpack serve --mode development --env development --hot",
     "build": "webpack"
-  }
+  },
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/van-chin/bdzx-sop-js.git"
+  },
+  "keywords": [
+    "sop",
+    "js",
+    "bdzx"
+  ]
 }
+
+

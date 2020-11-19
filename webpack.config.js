@@ -37,6 +37,11 @@ module.exports = {
 		port: 9000
 	  },
 
+	  output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'index.js'
+	  },
+
 	module: {
 		rules: [
 			{

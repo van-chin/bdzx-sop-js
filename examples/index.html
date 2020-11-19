@@ -6,6 +6,97 @@
     <title>Document</title>
 </head>
 <body>
-    dddd
+    ddddvv
+    <script src="../dist/index.js"></script>
+
+    <script>
+
+console.info('zxSop =>',window);
+
+        const appId = '20201030771769416584003584';
+const appKey = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDOhl37iLYtZlgQtSRa5gzyDWYIqeaKTLXSlcKR5qU+jV28yCKaoQwFV2c3jTnlVKmG8x4V3haJHn1I7++QdpeZ3DKMhHWERMx7EoDKfq/1FTtAT/mlbFOfLHGq7+kyjgAmBI6gR1Ee54F70+EwAFO0kdQeE8CcxOADmfRGI9mrE8LmZbktGm2axJqGc9EnZp+cyZa1tHNnbGKigdT0dZcAuyEPTC0/AlsCrcolU4gj3PlEQZO0flPkwyLv6r5h3YPgL0J6lSb2yX60uU5Sx0t0J7Kf6ZJrRQBXP8X3fiqHy+AE5dR0t+fOvfFhxt3pDMCljFjDuV9tpNDTMT9MrS69AgMBAAECggEBALnxpKCaAFxz7wpr7WWiBznP8nQOdLFES9hkWiB+53ygTytvjihmo6oTfa04jE38of4M2qOZp/Sg7PBEhw8sl2ZCKYj2odALGYgdqrOmyMoC6awH1Z+pHskLfPQIuY945o1UQQ3x6AnJKn3Q0MklIjhLrA3AfwUnBQJ5FMQp9wrdSZ1vVbsdov0/nbn0nLRGlq5hBQnkcNT4tfPgFlguGb44o6eOm5A2PrCiJK7lPV8gULt6Gxd7a+mjXaLrhgqmini9tQrNDuGDZyYnGQGa9QDdK7ABsb+p3w3htw61IBcbptpD90Du8TMLdyrDX3mMoQsXhpSeT2TvVrK6l3+XIskCgYEA/3+OHE/mrX8TqdvBP0db5C3A6s+pK7TLcm2orKdFYVF6/nmYSU2OGaL3fprpSnhCs+ml9NbpdvaTshQtuFyQMi6dAzF8oywAUisylAj2qVzLgAiqPBoEVyURtdn7QQlGWVq6vOBsrCNoBV5zzcKUmZhW4QV+FGwD5vZA2FFx58cCgYEAzu4xI0mZWZWnVJFikHLB0ro9TO7CE7l+hV8j5Gb1E2H2Syzh5DVnuvzyJw7Gi+suVB+MS1vtIQGXJNHgTOT1wzFo9DNVTJYHJslGlyAw7/6wwN9dhpuvrlwlzFze4r4QoyA73fNrfnCCw6D8F3YHcX5WlLcalslfMeQnHnUf3VsCgYBYshBEddxvuGC8I8S3Ue9tjBCfs01YFeBWrgjTPxJP0XhwJQgf0mOVNMTUV7TLHGqTiHYLRBwyJzForaadjMymDxaEyEYrYxgNbl+VknMGomcm4FswmBuPoRe/2JdnoW+hj2SqMwKm03fF/V8YPAdYNtFaNozpTAIiyLQEJGn1ewKBgHGfBiobEnHHI37i6VzpNhXQHzKr8rLD6n2vFNUn1y+SXZs/hLU6wb9BfnEFwu028FROkkkaq6Sw693Sw7dVDMDl03wq545K3phkcjcu/M/6Z/EvdHoh6B/0BukkoVmdBSOc4mJnc0GU46gpL+Jt835U4ZN8ysO6xGNvpC8sHpf7AoGAJ9JNRQgtRB3kh94Zg4+dyNF3AeynJbA7Qqj/SPQS7h0CWZqtl63kOBcCL2eI3EGWSrOBHmGS3VIyVpfov1Ed5j7f3X4sOSVYsHWuM299bHWdHr3Xzv/8pBTkjiwfqf/nnil9LPBm+12hao3VCWDEXjTRo5kivyTWGe1HFKxSQpA=";
+var zxSop = new ZxSop(appId,appKey);
+
+// sop.appId = "123";
+
+zxSop.downloadMap({
+    mapId:'1352846356722171906',
+    fileName:"东客站负二层.json",
+    appId:appId,
+    pubKey:" ",
+    priKey:" "
+});
+
+
+// zxSop.mpOfficialAuth({
+//         "code": "123456789",
+//         "appId": "微信公众号appId",
+//         "appSecret": "微信公众号appSecret"
+//     }).then(rsp=>{
+//         console.info(rsp);
+//     })
+
+
+// zxSop.mpOfficialTicket({
+//         "url": "http://www.bdzx.com"
+//     }).then(rsp=>{
+//         console.info(rsp);
+//     })
+// // "merchantId": "1251088204838642158"
+
+// zxSop.mapList({
+//         "merchantId": "1251088204838642158"
+//     }).then(rsp=>{
+//         console.info(rsp);
+//     })
+
+
+//     zxSop.mapNearest({
+//         "merchantId": "1251088204838642158",
+//         "lon": "100.2212",
+//         "lat": "30.0993"
+//     }).then(rsp=>{
+//         console.info(rsp);
+//     })
+
+//     zxSop.mapLocationUpload({
+//         "encKey": "3b4a6a95c9c7b52c052f959b70ed0abf",
+//         "merchantId": "2019072318552100207C",
+//         "businessId": "2019072318552100207C",
+//         "projectId": "123",
+//         "mapId": "ddd",
+//         "mapName": "测试地图",
+//         "version": "1.0.0",
+//         "floor": "11",
+//         "userId": "13213123",
+//         "userName": "王嘉尔",
+//         "taskId": "2019072318552100207C",
+//         "locationTime": "2020-08-10 14:50:02.789",
+//         "longitude": "104.03977045",
+//         "latitude": "30.702030899",
+//         "height": "100",
+//         "direct": "1",
+//         "speed": "1",
+//         "distance": "12",
+//         "appName": "三湖APP",
+//         "appId": "123456",
+//         "relativeX": "1",
+//         "relativeY": "2",
+//         "relativeZ": "2",
+//         "needResult": "true",
+//         "needCheck": "true",
+//         "enter": "true"
+//     }).then(rsp=>{
+//         console.info(rsp);
+//     })
+
+
+
+
+    
+
+
+
+    </script>
 </body>
 </html>

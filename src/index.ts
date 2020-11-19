@@ -13,7 +13,7 @@ import axios from "axios";
  * @param version 版本号 默认为 “1.0”
  * @param biz_content 业务参数内容 默认值为{}
  */
-interface SignContentParams {
+declare interface SignContentParams {
   app_id: string;
   method: string;
   format: string;
@@ -23,6 +23,19 @@ interface SignContentParams {
   version: string; // 1.0
   biz_content: string;
 }
+
+
+declare interface errorData {
+  code: number;
+  message: string;
+}
+
+declare global {
+    interface Window {
+        ZxSop: any;
+      }
+}
+
 
 class ZxSop {
   private appId: string;
@@ -55,6 +68,8 @@ class ZxSop {
     const signature = new KJUR.crypto.Signature({
       alg: hash
     });
+
+    console.info('signature',signature);
     const privateKey: string = this.formatKey();
     // 2.初始化 key
     const key = KEYUTIL.getKey(privateKey);
@@ -289,18 +304,35 @@ class ZxSop {
       responseType: "blob",
       data: requestData,
     }).then((response: any) => {
-      console.log("ZxSop -> downloadMap -> response", response)
-      if(response.status === 200) {
-        return response.data;
+
+      if(response.headers.code) {
+      
+        let data:errorData;
+
+        if(response.headers.code === '40002') {
+          data = {
+            message:'签名错误',
+            code:response.headers.code
+          };
+        
+        } 
+        if(response.headers.code === '500') {
+          data = {
+            message:'业务参数错误',
+            code:response.headers.code
+          };
+          
+        }
+
+        return data;
+
       } else {
-        return {
-          status:500,
-          message:'错误'
-        };
+
+        return response.data;
       }
-      // const responseDataKey = this.getResponseDataKey(requestData.method);
-      // console.log("ZxSop -> downloadMap -> responseDataKey", responseDataKey);
-      // return response.data;
+      
+      
+      
     });
   }
   /**
@@ -504,9 +536,15 @@ class ZxSop {
   }
 }
 
+
+console.info('sdk -zxsop',ZxSop);
+
 if (typeof window !== "undefined") {
-  // window.ZxSop = ZxSop;
-  (window as any).ZxSop = ZxSop;
+  console.info('windows...');
+  window.ZxSop = ZxSop;
+
+  // (window as any).ZxSop = ZxSop;
 }
+
 
 export default ZxSop;
